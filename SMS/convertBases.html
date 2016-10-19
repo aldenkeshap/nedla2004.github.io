@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Convert Bases</title>
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+  <script src="math.js"></script>
+</head>
+<body bgcolor="FFFF00">
+  <h1><a href="index.html"+ style="float: right; text-decoration: none; color: black;">Main Page</a></h1>
+  <h1>Convert Bases</h1>
+  <p>Number to convert:</p>
+  <input type="text" id="numToConvert" onkeyup="update()">
+  <p>Base it is in:</p>
+  <input type="number" id="baseStart" onkeyup="update()" min="2" max="36">
+  <p>Base to convert it to:</p>
+  <input type="number" id="baseEnd" onkeyup="update()" min="2" max="36">
+  <p id="result"></p>
+  <script>
+  function update() {
+    numToConvert = document.getElementById("numToConvert").value;
+    startingBase = document.getElementById("baseStart").value;
+    endingBase = document.getElementById("baseEnd").value;
+    if ((2 <= startingBase && startingBase <= 36) && (2 <= endingBase && endingBase <= 36)) {
+      document.getElementById("result").innerHTML = convertBase(numToConvert, startingBase, endingBase);
+    } else {
+      document.getElementById("result").innerHTML = ""
+    }
+  }
+  </script>
+</body>
+</html>

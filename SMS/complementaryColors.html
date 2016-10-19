@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Complementary Colors</title>
+<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+<script src="rgbFunctions.js"></script>
+</head>
+<body bgcolor="#808080">
+<h1><a href="index.html"+ style="float: right; text-decoration: none; color: black;">Main Page</a></h1>
+<h1>Complementary Colors</h1>
+
+<p id="paragraph1">Choose a color, then click set.</p>
+
+<button type="button" onclick="setColor()">Set</button>
+<input type="color" id="colorPicker" value="#808080">
+
+<script>
+function setColor() {
+	document.body.style.backgroundColor = getComplementaryColor(document.getElementById("colorPicker").value);
+}
+</script>
+
+</body>
+</html>

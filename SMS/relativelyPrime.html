@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Relatively Prime</title>
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+  <script src="math.js"></script>
+</head>
+<body bgcolor="00FF00">
+  <h1><a href="index.html"+ style="float: right; text-decoration: none; color: black;">Main Page</a></h1>
+  <h1>Relatively Prime</h1>
+  <p>First number:</p>
+  <input type="number" id="a" onkeyup="update()">
+  <p>Second number:</p>
+  <input type="number" id="b" onkeyup="update()">
+  <p id="result"></p>
+  <script>
+  function update() {
+    a = document.getElementById("a").value;
+    b = document.getElementById("b").value;
+    if (isNumeric(a) && isNumeric(b)) {
+      if (gcd(a,b) === 1) {
+        document.getElementById("result").innerHTML = a + " and " + b + " are relatively prime.";
+      } else {
+        document.getElementById("result").innerHTML = a + " and " + b + " are not relatively prime, they have a common divisor of " + gcd(a, b);
+      }
+    } else {
+      document.getElementById("result").innerHTML = "";
+    }
+  }
+  </script>
+</body>
+</html>

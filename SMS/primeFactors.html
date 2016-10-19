@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prime Factors</title>
+    <script src="math.js"></script>
+</head>
+<body bgcolor="#FF0000">
+  <h1><a href="index.html?color="+ style="float: right; text-decoration: none; color: black;">Main Page</a></h1>
+  <h1>Prime Factors</h1>
+  <p>Number to get prime factors of:</p>
+  <input type="text" id="number" onkeyup="update()">
+  <p id="result"></p>
+  <script>
+  function update() {
+    value = document.getElementById('number').value
+    factors = primeFactorization(value);
+    if (isNumeric(value) && (factors.length !== 1)) {
+      document.getElementById("result").innerHTML = "The prime factors of " + document.getElementById('number').value +
+      " are " + factors + ".";
+    } else if (isNumeric(value) && factors.length === 1){
+      document.getElementById("result").innerHTML = value + " is prime."
+    } else {
+      document.getElementById("result").innerHTML = "";
+    }
+  }
+  </script>
+</body>
+</html>
