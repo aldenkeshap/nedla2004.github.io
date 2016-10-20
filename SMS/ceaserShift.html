@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ceaser Shift</title>
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+  <script src="math.js"></script>
+</head>
+<body bgcolor="00FFFF">
+  <h1><a href="index.html"+ style="float: right; text-decoration: none; color: black;">Main Page</a></h1>
+  <h1>Ceaser Shift</h1>
+  <p>Text to shift:</p>
+  <input type="text" id="text" onkeyup="update()">
+  <p>Shift by:</p>
+  <input type="number" id="distance" onkeyup="update()">
+  <p id="result"></p>
+  <script>
+  function update() {
+    text = document.getElementById("text").value;
+    distance = document.getElementById("distance").value;
+    if (isNumeric(distance)) {
+      document.getElementById("result").innerHTML = ceaserShift(text, distance);
+    } else {
+      document.getElementById("result").innerHTML = "";
+    }
+  }
+  function ceaserShift(text, distance) {
+    finalResult = "";
+    for (var i = 0, len = text.length; i < len; i++) {
+      char = text[i];
+      code = char.charCodeAt(0)
+      if (code >= 97 && code <= 122) {
+        resultcode = (code + distance - 97) % 26;
+        finalResult += String.fromCharCode(resultcode+97);
+      } else if (code >= 65 && code <= 90) {
+        resultcode = (code + distance - 65) % 26;
+        finalResult += String.fromCharCode(resultcode+65);
+      } else {
+        finalResult += char;
+      }
+    }
+    return finalResult;
+  }
+  </script>
+</body>
+</html>
