@@ -10,4 +10,4 @@ def update():
     result = hash(document['name'].value)
     document['result'].value = 'You are a %s/10' % result
 
-document['name'].bind('onSubmit', update)
+document['name'].bind('onKeyDown', update)
