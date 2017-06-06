@@ -12,6 +12,7 @@
     recognition.start();
   }
   recognition.onresult = function(event) {
+    console.log(event)
     var last = event.results.length - 1;
     var text = event.results[last][0].transcript;
     result = document.getElementById('lastSaid');
