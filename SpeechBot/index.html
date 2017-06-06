@@ -3,16 +3,18 @@
 <html>
 <head>
   <title>Helpful Bot</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <script>
   var recognition = new webkitSpeechRecognition();
+  recognition.continuous = true;
   document.body.onclick = function() {
     alert("Starting...");
     recognition.start();
   }
   recognition.onresult = function(event) {
-    console.log(event)
+    console.log(event);
     var last = event.results.length - 1;
     var text = event.results[last][0].transcript;
     result = document.getElementById('lastSaid');
