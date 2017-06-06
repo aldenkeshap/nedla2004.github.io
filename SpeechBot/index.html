@@ -12,9 +12,13 @@
     recognition.start();
   }
   recognition.onresult = function(event) {
-    var text = event[0][0].transcript;
+    var last = event.results.length - 1;
+    var text = event.results[last][0].transcript;
     result = document.getElementById('lastSaid');
     result.innerHTML = text;
+  }
+  recognition.onspeechend = function() {
+    recognition.stop();
   }
   </script>
   <h1>Helpful Bot</h1>
