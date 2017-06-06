@@ -6,7 +6,7 @@
 </head>
 <body>
   <script>
-  var recognition = new SpeechRecognition();
+  var recognition = new webkitSpeechRecognition();
   document.body.onclick = function() {
     recognition.start();
   }
