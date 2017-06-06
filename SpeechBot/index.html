@@ -8,9 +8,10 @@
   <script>
   var recognition = new webkitSpeechRecognition();
   document.body.onclick = function() {
+    alert("Starting...");
     recognition.start();
   }
-  recognition.onstart = function(event) {
+  recognition.onresult = function(event) {
     var text = event[0][0].transcript;
     result = document.getElementById('lastSaid');
     result.innerHTML = text;
