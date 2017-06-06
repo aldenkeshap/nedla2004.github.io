@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Helpful Bot</title>
+</head>
+<body>
+  <script>
+  var recognition = new SpeechRecognition();
+  document.body.onclick = function() {
+    recognition.start();
+  }
+  recognition.onstart = function(event) {
+    var text = event[0][0].transcript;
+    result = document.getElementById('lastSaid');
+    result.innerHTML = text;
+  }
+  </script>
+  <h1>Helpful Bot</h1>
+  <h3>Click anywhere for the bot to listen</h3>
+  <p></p><p></p><p></p><p></p><p></p>
+  <p id="lastSaid"></p>
+</body>
+</html>
